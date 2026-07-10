@@ -328,3 +328,64 @@ body {
   color: var(--accent-primary);
   text-shadow: var(--glow-accent);
 }
+
+/* Calendar Styles */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.calendar-grid.days-header {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.calendar-day {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05); /* Faint background for normal days */
+  transition: all 0.3s ease;
+}
+
+.calendar-day.empty {
+  background: transparent;
+}
+
+.calendar-day.completed {
+  background: var(--accent-primary);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(255, 81, 0, 0.4);
+}
+
+.calendar-day.rest {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-dot.completed {
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px rgba(255, 81, 0, 0.4);
+}
+
+.legend-dot.rest {
+  background: var(--bg-tertiary);
+}

@@ -128,22 +128,24 @@ export const InProgressScreen: React.FC = () => {
             <span className="text-xs text-muted font-semibold">REST TIMER</span>
             <span className="text-2xl" style={{ fontFamily: 'monospace' }}>{formatClock(clock)}</span>
           </div>
-          <button 
-            className="capsule-btn" 
-            style={{ 
-              background: 'linear-gradient(to right, var(--accent-primary), var(--accent-secondary))',
-              color: '#fff',
-              padding: '16px 32px',
-              fontSize: '18px',
-              fontWeight: 700,
-              gap: 8,
-              boxShadow: 'var(--glow-accent)'
-            }}
-            onClick={handleNext}
-          >
-            {exerciseIndex < dayData.exercises.length - 1 ? 'Next' : 'Finish'} 
-            <ArrowRight size={20} />
-          </button>
+          {exerciseIndex < dayData.exercises.length - 1 && (
+            <button 
+              className="capsule-btn" 
+              style={{ 
+                background: 'linear-gradient(to right, var(--accent-primary), var(--accent-secondary))',
+                color: '#fff',
+                padding: '16px 32px',
+                fontSize: '18px',
+                fontWeight: 700,
+                gap: 8,
+                boxShadow: 'var(--glow-accent)'
+              }}
+              onClick={handleNext}
+            >
+              Next
+              <ArrowRight size={20} />
+            </button>
+          )}
         </div>
       </div>
     </div>

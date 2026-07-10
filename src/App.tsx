@@ -6,6 +6,8 @@ import { RoutineOverviewScreen } from './screens/RoutineOverviewScreen';
 import { ActiveDayScreen } from './screens/ActiveDayScreen';
 import { InProgressScreen } from './screens/InProgressScreen';
 import { WorkoutCompleteScreen } from './screens/WorkoutCompleteScreen';
+import { CalendarScreen } from './screens/CalendarScreen';
+import { StopwatchScreen } from './screens/StopwatchScreen';
 
 const MainApp: React.FC = () => {
   const { currentScreen } = useWorkout();
@@ -22,6 +24,10 @@ const MainApp: React.FC = () => {
         return <InProgressScreen />;
       case 'complete':
         return <WorkoutCompleteScreen />;
+      case 'calendar':
+        return <CalendarScreen />;
+      case 'stopwatch':
+        return <StopwatchScreen />;
       default:
         return <DashboardScreen />;
     }

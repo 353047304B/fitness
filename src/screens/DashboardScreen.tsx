@@ -1,6 +1,7 @@
 import React from 'react';
 import { useWorkout } from '../store/WorkoutContext';
-import { Settings, Plus, Home, Timer, Calendar } from 'lucide-react';
+import { Settings, Plus } from 'lucide-react';
+import { BottomNav } from '../components/BottomNav';
 
 export const DashboardScreen: React.FC = () => {
   const { navigate, setActiveWorkoutId } = useWorkout();
@@ -63,12 +64,7 @@ export const DashboardScreen: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Nav */}
-      <div className="bottom-nav">
-        <Home size={24} className="accent-text" />
-        <Timer size={24} className="text-muted" />
-        <Calendar size={24} className="text-muted" />
-      </div>
+      <BottomNav />
     </div>
   );
 };
